@@ -1,0 +1,1797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.6 on darwin)" generated="20211117 14:11:49.936" rpa="false">
+<suite id="s1" name="RQ3.BF11.2:ModifierUneListeDeDonnees" source="/Users/jiaxue/Downloads/AEC SPÉCIALISTE EN QUALITÉ LOGICIELLE/Projet de Synthese/Automatisation/ProjetAlfresco/TestCases/RQ3.BF11.2:ModifierUneListeDeDonnees.robot">
+<test id="s1-t1" name="RQ3.BF11.2: ModifierUneListeDeDonnees">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:11:50.213" endtime="20211117 14:11:50.213"></status>
+</kw>
+<kw name="Init Date" library="resourceAlfresco1">
+<assign>
+<var>${date_current}</var>
+</assign>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>exclude_millis=yes</arg>
+</arguments>
+<assign>
+<var>${vDateSys}</var>
+</assign>
+<msg timestamp="20211117 14:11:50.215" level="INFO">${vDateSys} = 2021-11-17 14:11:50</msg>
+<status status="PASS" starttime="20211117 14:11:50.214" endtime="20211117 14:11:50.215"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${vDateSys}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${vYear}</var>
+</assign>
+<msg timestamp="20211117 14:11:50.216" level="INFO">${vYear} = 2021</msg>
+<status status="PASS" starttime="20211117 14:11:50.215" endtime="20211117 14:11:50.216"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${vDateSys}</arg>
+<arg>5</arg>
+<arg>7</arg>
+</arguments>
+<assign>
+<var>${vMonth}</var>
+</assign>
+<msg timestamp="20211117 14:11:50.217" level="INFO">${vMonth} = 11</msg>
+<status status="PASS" starttime="20211117 14:11:50.216" endtime="20211117 14:11:50.217"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${vDateSys}</arg>
+<arg>8</arg>
+<arg>10</arg>
+</arguments>
+<assign>
+<var>${vDate}</var>
+</assign>
+<msg timestamp="20211117 14:11:50.217" level="INFO">${vDate} = 17</msg>
+<status status="PASS" starttime="20211117 14:11:50.217" endtime="20211117 14:11:50.217"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${vDateSys}</arg>
+<arg>11</arg>
+<arg>13</arg>
+</arguments>
+<assign>
+<var>${vHeure}</var>
+</assign>
+<msg timestamp="20211117 14:11:50.218" level="INFO">${vHeure} = 14</msg>
+<status status="PASS" starttime="20211117 14:11:50.217" endtime="20211117 14:11:50.218"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${vDateSys}</arg>
+<arg>14</arg>
+<arg>16</arg>
+</arguments>
+<assign>
+<var>${vMinute}</var>
+</assign>
+<msg timestamp="20211117 14:11:50.218" level="INFO">${vMinute} = 11</msg>
+<status status="PASS" starttime="20211117 14:11:50.218" endtime="20211117 14:11:50.218"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${vDateSys}</arg>
+<arg>17</arg>
+<arg>19</arg>
+</arguments>
+<assign>
+<var>${vSeconde}</var>
+</assign>
+<msg timestamp="20211117 14:11:50.219" level="INFO">${vSeconde} = 50</msg>
+<status status="PASS" starttime="20211117 14:11:50.219" endtime="20211117 14:11:50.220"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${vYear}${vMonth}${vDate}${vHeure}${vMinute}${vSeconde}</arg>
+</arguments>
+<assign>
+<var>${vCompleteDate}</var>
+</assign>
+<msg timestamp="20211117 14:11:50.221" level="INFO">${vCompleteDate} = 20211117141150</msg>
+<status status="PASS" starttime="20211117 14:11:50.220" endtime="20211117 14:11:50.221"></status>
+</kw>
+<msg timestamp="20211117 14:11:50.223" level="INFO">${date_current} = 20211117141150</msg>
+<status status="PASS" starttime="20211117 14:11:50.214" endtime="20211117 14:11:50.223"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Pre-condition</arg>
+</arguments>
+<msg timestamp="20211117 14:11:50.224" level="INFO">Pre-condition</msg>
+<status status="PASS" starttime="20211117 14:11:50.224" endtime="20211117 14:11:50.225"></status>
+</kw>
+<kw name="Log in Alfresco" library="resourceAlfresco1">
+<arguments>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+</arguments>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:11:50.227" endtime="20211117 14:11:50.228"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${vURL}</arg>
+<arg>${vBrowser}</arg>
+</arguments>
+<msg timestamp="20211117 14:11:50.229" level="INFO">Opening browser 'gc' to base url 'http://localhost:8088/share/page/'.</msg>
+<status status="PASS" starttime="20211117 14:11:50.228" endtime="20211117 14:11:54.814"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211117 14:11:54.815" endtime="20211117 14:11:55.069"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_UserName}</arg>
+<arg>${vUsername}</arg>
+</arguments>
+<msg timestamp="20211117 14:11:55.070" level="INFO">Typing text '1689374' into text field 'xpath://input[@name='username']'.</msg>
+<status status="PASS" starttime="20211117 14:11:55.069" endtime="20211117 14:11:55.233"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_Password}</arg>
+<arg>${vPassword}</arg>
+</arguments>
+<msg timestamp="20211117 14:11:55.234" level="INFO">Typing password into text field 'css:input[name='password']'.</msg>
+<msg timestamp="20211117 14:11:55.277" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211117 14:11:55.337" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20211117 14:11:55.233" endtime="20211117 14:11:55.337"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_Login}</arg>
+</arguments>
+<msg timestamp="20211117 14:11:55.337" level="INFO">Clicking button 'css:.yui-button.yui-submit-button&gt;.first-child&gt;button'.</msg>
+<status status="PASS" starttime="20211117 14:11:55.337" endtime="20211117 14:11:56.924"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:11:50.225" endtime="20211117 14:11:56.925"></status>
+</kw>
+<kw name="Create Un Site Complet" library="resourceAlfresco1">
+<arguments>
+<arg>${vNomSite}${date_current}</arg>
+<arg>${vUrlSite}${date_current}</arg>
+<arg>${vDescriptionSite}${date_current}</arg>
+<arg>${vVisbilitySite}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_HeaderSites}</arg>
+</arguments>
+<msg timestamp="20211117 14:11:56.931" level="INFO">Clicking element 'id=HEADER_SITES_MENU_text'.</msg>
+<status status="PASS" starttime="20211117 14:11:56.930" endtime="20211117 14:11:57.021"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${link_HeaderCreerUnSite}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:11:57.022" endtime="20211117 14:11:57.278"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_HeaderCreerUnSite}</arg>
+</arguments>
+<msg timestamp="20211117 14:11:57.279" level="INFO">Clicking element 'HEADER_SITES_MENU_CREATE_SITE'.</msg>
+<status status="PASS" starttime="20211117 14:11:57.278" endtime="20211117 14:11:57.422"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${list_CreerSiteType}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:11:57.422" endtime="20211117 14:11:57.513"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:00.517" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211117 14:11:57.514" endtime="20211117 14:12:00.517"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${list_CreerSiteType}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:00.518" level="INFO">Clicking element 'xpath=//input[@class='dijitReset dijitInputField dijitArrowButtonInner']'.</msg>
+<status status="PASS" starttime="20211117 14:12:00.517" endtime="20211117 14:12:00.591"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${list_CreerSiteTypeElement1}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:00.592" level="INFO">Clicking element 'id=dijit_MenuItem_0_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:00.591" endtime="20211117 14:12:00.642"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_CreerSiteTitle}</arg>
+<arg>${title}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:00.643" level="INFO">Typing text 'SiteXue20211117141150' into text field 'xpath=//input[@name='title']'.</msg>
+<status status="PASS" starttime="20211117 14:12:00.642" endtime="20211117 14:12:00.796"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_CreerSiteShortName}</arg>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:00.797" level="INFO">Typing text 'Url20211117141150' into text field 'xpath=//input[@name='shortName']'.</msg>
+<status status="PASS" starttime="20211117 14:12:00.796" endtime="20211117 14:12:00.969"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_CreerSiteDescription}</arg>
+<arg>${description}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:00.971" level="INFO">Typing text 'Description20211117141150' into text field 'xpath=//textarea[@name='description']'.</msg>
+<status status="PASS" starttime="20211117 14:12:00.969" endtime="20211117 14:12:01.140"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_VisibilityPart1}${visibility}${btn_VisibilityPart2}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:01.141" level="INFO">Clicking element '//input[@value='PUBLIC']'.</msg>
+<status status="PASS" starttime="20211117 14:12:01.140" endtime="20211117 14:12:01.213"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:02.214" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211117 14:12:01.213" endtime="20211117 14:12:02.214"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_CreerSiteCreer}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:02.215" level="INFO">Clicking element 'id=CREATE_SITE_DIALOG_OK_label'.</msg>
+<status status="PASS" starttime="20211117 14:12:02.215" endtime="20211117 14:12:02.266"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:05.269" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:02.267" endtime="20211117 14:12:05.270"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${img_SiteConfiguration}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:05.271" level="INFO">Clicking element 'xpath=//div[@id='HEADER_SITE_CONFIGURATION_DROPDOWN']'.</msg>
+<status status="PASS" starttime="20211117 14:12:05.270" endtime="20211117 14:12:05.349"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:08.352" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:05.349" endtime="20211117 14:12:08.352"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_personnaliserSite}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:08.353" level="INFO">Clicking element 'xpath=//td[@id='HEADER_CUSTOMIZE_SITE_text']'.</msg>
+<status status="PASS" starttime="20211117 14:12:08.352" endtime="20211117 14:12:11.063"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:14.065" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:11.063" endtime="20211117 14:12:14.065"></status>
+</kw>
+<kw name="Drag And Drop" library="SeleniumLibrary">
+<doc>Drags the element identified by ``locator`` into the ``target`` element.</doc>
+<arguments>
+<arg>${img_BlogPage}</arg>
+<arg>${target_dropplace}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:14.066" endtime="20211117 14:12:14.624"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:16.627" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:14.624" endtime="20211117 14:12:16.627"></status>
+</kw>
+<kw name="Drag And Drop" library="SeleniumLibrary">
+<doc>Drags the element identified by ``locator`` into the ``target`` element.</doc>
+<arguments>
+<arg>${img_LiensPage}</arg>
+<arg>${target_dropplace}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:16.627" endtime="20211117 14:12:17.173"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:19.175" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:17.173" endtime="20211117 14:12:19.175"></status>
+</kw>
+<kw name="Drag And Drop" library="SeleniumLibrary">
+<doc>Drags the element identified by ``locator`` into the ``target`` element.</doc>
+<arguments>
+<arg>${img_ListeDoneesPage}</arg>
+<arg>${target_dropplace}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:19.176" endtime="20211117 14:12:19.723"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:21.725" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:19.723" endtime="20211117 14:12:21.726"></status>
+</kw>
+<kw name="Drag And Drop By Offset" library="SeleniumLibrary">
+<doc>Drags the element identified with ``locator`` by ``xoffset/yoffset``.</doc>
+<arguments>
+<arg>${img_DiscussionPage}</arg>
+<arg>700</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:21.726" endtime="20211117 14:12:22.267"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:24.268" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:22.267" endtime="20211117 14:12:24.268"></status>
+</kw>
+<kw name="Drag And Drop By Offset" library="SeleniumLibrary">
+<doc>Drags the element identified with ``locator`` by ``xoffset/yoffset``.</doc>
+<arguments>
+<arg>${img_WikiPage}</arg>
+<arg>800</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:24.268" endtime="20211117 14:12:24.806"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:26.807" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:24.806" endtime="20211117 14:12:26.808"></status>
+</kw>
+<kw name="Drag And Drop By Offset" library="SeleniumLibrary">
+<doc>Drags the element identified with ``locator`` by ``xoffset/yoffset``.</doc>
+<arguments>
+<arg>${img_CalendrierPage}</arg>
+<arg>1000</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:26.808" endtime="20211117 14:12:27.344"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:30.346" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:27.345" endtime="20211117 14:12:30.346"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_OkPersonnalierSite}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:30.347" level="INFO">Clicking button 'id=template_x002e_customise-pages_x002e_customise-site_x0023_default-save-button-button'.</msg>
+<status status="PASS" starttime="20211117 14:12:30.346" endtime="20211117 14:12:30.436"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:11:56.926" endtime="20211117 14:12:30.436"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:32.439" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:30.437" endtime="20211117 14:12:32.439"></status>
+</kw>
+<kw name="Creer une liste de donnees" library="resourceAlfresco1">
+<arguments>
+<arg>${vNomSite}${date_current}</arg>
+<arg>${vTypeListe}</arg>
+<arg>${vNomListeDonnees}${date_current}</arg>
+<arg>${vDesciptionListeDonnees}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${link_HeaderSites}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:32.442" endtime="20211117 14:12:32.476"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_HeaderSites}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:32.477" level="INFO">Clicking element 'id=HEADER_SITES_MENU_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:32.477" endtime="20211117 14:12:32.536"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_SITES_MENU_MY_SITES_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:32.537" endtime="20211117 14:12:32.786"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_SITES_MENU_MY_SITES_text</arg>
+</arguments>
+<msg timestamp="20211117 14:12:32.786" level="INFO">Clicking element 'id=HEADER_SITES_MENU_MY_SITES_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:32.786" endtime="20211117 14:12:32.826"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//a[text()='${vNomSite}']</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:32.827" endtime="20211117 14:12:33.380"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[text()='${vNomSite}']</arg>
+</arguments>
+<msg timestamp="20211117 14:12:33.381" level="INFO">Clicking element 'xpath=//a[text()='SiteXue20211117141150']'.</msg>
+<status status="PASS" starttime="20211117 14:12:33.380" endtime="20211117 14:12:34.152"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//span[@title='${vNomSite}']</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:34.152" endtime="20211117 14:12:34.171"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<assign>
+<var>${statut}</var>
+<var>${value}</var>
+</assign>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<msg timestamp="20211117 14:12:34.172" level="INFO">Clicking element 'id=HEADER_SITE_DATA-LISTS_text'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211117 14:12:34.579" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211117 14:12:34.198" endtime="20211117 14:12:34.579"></status>
+</kw>
+<msg timestamp="20211117 14:12:34.581" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=95.0.4638.69)
+</msg>
+<status status="FAIL" starttime="20211117 14:12:34.172" endtime="20211117 14:12:34.581"></status>
+</kw>
+<msg timestamp="20211117 14:12:34.581" level="INFO">${statut} = FAIL</msg>
+<msg timestamp="20211117 14:12:34.581" level="INFO">${value} = ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=95.0.4638.69)
+</msg>
+<status status="PASS" starttime="20211117 14:12:34.171" endtime="20211117 14:12:34.581"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Click Element</arg>
+<arg>id=HEADER_SITE_MORE_PAGES_text</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_SITE_MORE_PAGES_text</arg>
+</arguments>
+<msg timestamp="20211117 14:12:34.583" level="INFO">Clicking element 'id=HEADER_SITE_MORE_PAGES_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:34.583" endtime="20211117 14:12:34.649"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:12:34.582" endtime="20211117 14:12:34.650"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:34.652" endtime="20211117 14:12:34.687"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:12:34.650" endtime="20211117 14:12:34.687"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Click Element</arg>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<msg timestamp="20211117 14:12:34.688" level="INFO">Clicking element 'id=HEADER_SITE_DATA-LISTS_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:34.688" endtime="20211117 14:12:35.666"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:12:34.687" endtime="20211117 14:12:35.667"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:39.670" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:35.667" endtime="20211117 14:12:39.670"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='template_x002e_datalists_x002e_data-lists_x0023_default-newList-itemTypesContainer']/div[${vTypeListe}]</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:39.670" endtime="20211117 14:12:39.692"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@id='template_x002e_datalists_x002e_data-lists_x0023_default-newList-itemTypesContainer']/div[${vTypeListe}]</arg>
+</arguments>
+<msg timestamp="20211117 14:12:39.692" level="INFO">Clicking element '//div[@id='template_x002e_datalists_x002e_data-lists_x0023_default-newList-itemTypesContainer']/div[1]'.</msg>
+<status status="PASS" starttime="20211117 14:12:39.692" endtime="20211117 14:12:39.793"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@name='prop_cm_title']</arg>
+<arg>${vNomListeDonnees}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:39.794" level="INFO">Typing text 'ListeDonneesXue20211117141150' into text field 'xpath=//input[@name='prop_cm_title']'.</msg>
+<status status="PASS" starttime="20211117 14:12:39.793" endtime="20211117 14:12:39.988"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//textarea[@name='prop_cm_description']</arg>
+<arg>${vDescriptionListeDonnees}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:39.988" level="INFO">Typing text 'DesciptionListeDonnees' into text field 'xpath=//textarea[@name='prop_cm_description']'.</msg>
+<status status="PASS" starttime="20211117 14:12:39.988" endtime="20211117 14:12:40.113"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=template_x002e_datalists_x002e_data-lists_x0023_default-newList-form-submit-button</arg>
+</arguments>
+<msg timestamp="20211117 14:12:40.114" level="INFO">Clicking button 'id=template_x002e_datalists_x002e_data-lists_x0023_default-newList-form-submit-button'.</msg>
+<status status="PASS" starttime="20211117 14:12:40.114" endtime="20211117 14:12:40.189"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:12:32.440" endtime="20211117 14:12:40.189"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:42.190" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:40.189" endtime="20211117 14:12:42.190"></status>
+</kw>
+<kw name="Log Out Alfresco" library="resourceAlfresco1">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_HOME_text</arg>
+</arguments>
+<msg timestamp="20211117 14:12:42.191" level="INFO">Clicking element 'id=HEADER_HOME_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:42.191" endtime="20211117 14:12:42.893"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_POPUP_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:42.894" endtime="20211117 14:12:42.963"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_POPUP_text</arg>
+</arguments>
+<msg timestamp="20211117 14:12:42.963" level="INFO">Clicking element 'id=HEADER_USER_MENU_POPUP_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:42.963" endtime="20211117 14:12:43.042"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_LOGOUT_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:43.042" endtime="20211117 14:12:43.084"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_LOGOUT_text</arg>
+</arguments>
+<msg timestamp="20211117 14:12:43.084" level="INFO">Clicking element 'id=HEADER_USER_MENU_LOGOUT_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:43.084" endtime="20211117 14:12:43.133"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:12:42.190" endtime="20211117 14:12:43.134"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211117 14:12:43.134" endtime="20211117 14:12:43.510"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Case</arg>
+</arguments>
+<msg timestamp="20211117 14:12:43.514" level="INFO">Test Case</msg>
+<status status="PASS" starttime="20211117 14:12:43.513" endtime="20211117 14:12:43.514"></status>
+</kw>
+<kw name="Log in Alfresco" library="resourceAlfresco1">
+<arguments>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+</arguments>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:43.517" endtime="20211117 14:12:43.518"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${vURL}</arg>
+<arg>${vBrowser}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:43.519" level="INFO">Opening browser 'gc' to base url 'http://localhost:8088/share/page/'.</msg>
+<status status="PASS" starttime="20211117 14:12:43.518" endtime="20211117 14:12:47.618"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211117 14:12:47.619" endtime="20211117 14:12:47.881"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_UserName}</arg>
+<arg>${vUsername}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:47.883" level="INFO">Typing text '1689374' into text field 'xpath://input[@name='username']'.</msg>
+<status status="PASS" starttime="20211117 14:12:47.881" endtime="20211117 14:12:48.053"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_Password}</arg>
+<arg>${vPassword}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:48.054" level="INFO">Typing password into text field 'css:input[name='password']'.</msg>
+<msg timestamp="20211117 14:12:48.103" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211117 14:12:48.163" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20211117 14:12:48.054" endtime="20211117 14:12:48.163"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_Login}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:48.163" level="INFO">Clicking button 'css:.yui-button.yui-submit-button&gt;.first-child&gt;button'.</msg>
+<status status="PASS" starttime="20211117 14:12:48.163" endtime="20211117 14:12:49.749"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:12:43.516" endtime="20211117 14:12:49.750"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_HeaderSites}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:49.752" level="INFO">Clicking element 'id=HEADER_SITES_MENU_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:49.751" endtime="20211117 14:12:49.849"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${link_HeaderMesSites}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:49.849" endtime="20211117 14:12:50.107"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_HeaderMesSites}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:50.107" level="INFO">Clicking element 'id=HEADER_SITES_MENU_MY_SITES_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:50.107" endtime="20211117 14:12:50.151"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${link_SiteCiblePart1}${vNomSite}${date_current}${link_SiteCiblePart2}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:50.152" endtime="20211117 14:12:50.724"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_SiteCiblePart1}${vNomSite}${date_current}${link_SiteCiblePart2}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:50.725" level="INFO">Clicking element 'xpath=//a[text()='SiteXue20211117141150']'.</msg>
+<status status="PASS" starttime="20211117 14:12:50.725" endtime="20211117 14:12:51.817"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${txt_TitleSitePart1}${vNomSite}${date_current}${txt_TitleSitePart2}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:51.817" endtime="20211117 14:12:51.854"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<assign>
+<var>${statut}</var>
+<var>${value}</var>
+</assign>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:51.856" level="INFO">Clicking element 'id=HEADER_SITE_DATA-LISTS_text'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211117 14:12:52.236" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211117 14:12:51.899" endtime="20211117 14:12:52.236"></status>
+</kw>
+<msg timestamp="20211117 14:12:52.237" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=95.0.4638.69)
+</msg>
+<status status="FAIL" starttime="20211117 14:12:51.855" endtime="20211117 14:12:52.237"></status>
+</kw>
+<msg timestamp="20211117 14:12:52.237" level="INFO">${statut} = FAIL</msg>
+<msg timestamp="20211117 14:12:52.237" level="INFO">${value} = ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=95.0.4638.69)
+</msg>
+<status status="PASS" starttime="20211117 14:12:51.855" endtime="20211117 14:12:52.237"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Click Element</arg>
+<arg>${link_PlusPageSite}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_PlusPageSite}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:52.239" level="INFO">Clicking element 'id=HEADER_SITE_MORE_PAGES_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:52.238" endtime="20211117 14:12:52.320"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:12:52.237" endtime="20211117 14:12:52.320"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:52.323" endtime="20211117 14:12:52.365"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:12:52.322" endtime="20211117 14:12:52.365"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Click Element</arg>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:52.367" level="INFO">Clicking element 'id=HEADER_SITE_DATA-LISTS_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:52.366" endtime="20211117 14:12:53.386"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:12:52.366" endtime="20211117 14:12:53.386"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:55.389" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:53.387" endtime="20211117 14:12:55.390"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${link_ListeDonnessCiblePart1}${vNomListeDonnees}${date_current}${link_ListeDonnessCiblePart2}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:55.390" endtime="20211117 14:12:55.416"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${link_ListeDonnessCiblePart1}${vNomListeDonnees}${date_current}${link_ListeDonnessCiblePart2}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:55.417" level="INFO">Simulating Mouse Over on element '//div[@id='template_x002e_datalists_x002e_data-lists_x0023_default-lists']//a[text()='ListeDonneesXue20211117141150']'.</msg>
+<status status="PASS" starttime="20211117 14:12:55.416" endtime="20211117 14:12:55.704"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_EditListeDonneesCiblePart1}${vNomListeDonnees}${date_current}${btn_EditListeDonneesCiblePart2}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:55.704" endtime="20211117 14:12:55.734"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_EditListeDonneesCiblePart1}${vNomListeDonnees}${date_current}${btn_EditListeDonneesCiblePart2}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:55.736" level="INFO">Clicking element 'xpath=//a[contains(.,'ListeDonneesXue20211117141150')]/span[@class='edit']'.</msg>
+<status status="PASS" starttime="20211117 14:12:55.735" endtime="20211117 14:12:55.835"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${txt_TitreListeDonnees}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:55.836" endtime="20211117 14:12:56.088"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_TitreListeDonnees}</arg>
+<arg>${vNomListeDonneesModifier}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:56.089" level="INFO">Typing text 'ListeDonneesXueModifier' into text field 'xpath=//input[@id='template_x002e_datalists_x002e_data-lists_x0023_default-editList_prop_cm_title']'.</msg>
+<status status="PASS" starttime="20211117 14:12:56.088" endtime="20211117 14:12:56.275"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_DescriptionListeDonnees}</arg>
+<arg>${vDesciptionListeDonneesModifier}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:56.277" level="INFO">Typing text 'DesciptionListeDonneesModifier' into text field 'xpath=//textarea[@id='template_x002e_datalists_x002e_data-lists_x0023_default-editList_prop_cm_description']'.</msg>
+<status status="PASS" starttime="20211117 14:12:56.276" endtime="20211117 14:12:56.442"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_EnregistrerListeDonnees}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:56.443" level="INFO">Clicking button 'xpath=//button[@id='template_x002e_datalists_x002e_data-lists_x0023_default-editList-form-submit-button']'.</msg>
+<status status="PASS" starttime="20211117 14:12:56.443" endtime="20211117 14:12:56.533"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:12:58.534" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:12:56.534" endtime="20211117 14:12:58.535"></status>
+</kw>
+<kw name="Log Out Alfresco" library="resourceAlfresco1">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_HOME_text</arg>
+</arguments>
+<msg timestamp="20211117 14:12:58.536" level="INFO">Clicking element 'id=HEADER_HOME_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:58.536" endtime="20211117 14:12:59.258"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_POPUP_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:59.259" endtime="20211117 14:12:59.292"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_POPUP_text</arg>
+</arguments>
+<msg timestamp="20211117 14:12:59.293" level="INFO">Clicking element 'id=HEADER_USER_MENU_POPUP_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:59.292" endtime="20211117 14:12:59.371"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_LOGOUT_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:59.371" endtime="20211117 14:12:59.419"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_LOGOUT_text</arg>
+</arguments>
+<msg timestamp="20211117 14:12:59.420" level="INFO">Clicking element 'id=HEADER_USER_MENU_LOGOUT_text'.</msg>
+<status status="PASS" starttime="20211117 14:12:59.419" endtime="20211117 14:12:59.471"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:12:58.535" endtime="20211117 14:12:59.471"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211117 14:12:59.472" endtime="20211117 14:12:59.727"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Criteres de succes</arg>
+</arguments>
+<msg timestamp="20211117 14:12:59.728" level="INFO">Criteres de succes</msg>
+<status status="PASS" starttime="20211117 14:12:59.728" endtime="20211117 14:12:59.729"></status>
+</kw>
+<kw name="Log in Alfresco" library="resourceAlfresco1">
+<arguments>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+</arguments>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:12:59.732" endtime="20211117 14:12:59.733"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${vURL}</arg>
+<arg>${vBrowser}</arg>
+</arguments>
+<msg timestamp="20211117 14:12:59.735" level="INFO">Opening browser 'gc' to base url 'http://localhost:8088/share/page/'.</msg>
+<status status="PASS" starttime="20211117 14:12:59.734" endtime="20211117 14:13:04.214"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211117 14:13:04.215" endtime="20211117 14:13:04.472"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_UserName}</arg>
+<arg>${vUsername}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:04.474" level="INFO">Typing text '1689374' into text field 'xpath://input[@name='username']'.</msg>
+<status status="PASS" starttime="20211117 14:13:04.472" endtime="20211117 14:13:04.647"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_Password}</arg>
+<arg>${vPassword}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:04.648" level="INFO">Typing password into text field 'css:input[name='password']'.</msg>
+<msg timestamp="20211117 14:13:04.693" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211117 14:13:04.746" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20211117 14:13:04.647" endtime="20211117 14:13:04.746"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_Login}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:04.746" level="INFO">Clicking button 'css:.yui-button.yui-submit-button&gt;.first-child&gt;button'.</msg>
+<status status="PASS" starttime="20211117 14:13:04.746" endtime="20211117 14:13:06.359"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:12:59.729" endtime="20211117 14:13:06.360"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_HeaderSites}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:06.362" level="INFO">Clicking element 'id=HEADER_SITES_MENU_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:06.361" endtime="20211117 14:13:06.453"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${link_HeaderMesSites}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:06.454" endtime="20211117 14:13:06.723"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_HeaderMesSites}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:06.724" level="INFO">Clicking element 'id=HEADER_SITES_MENU_MY_SITES_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:06.723" endtime="20211117 14:13:07.352"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${link_SiteCiblePart1}${vNomSite}${date_current}${link_SiteCiblePart2}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:07.353" endtime="20211117 14:13:07.407"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_SiteCiblePart1}${vNomSite}${date_current}${link_SiteCiblePart2}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:07.408" level="INFO">Clicking element 'xpath=//a[text()='SiteXue20211117141150']'.</msg>
+<status status="PASS" starttime="20211117 14:13:07.407" endtime="20211117 14:13:08.494"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${txt_TitleSitePart1}${vNomSite}${date_current}${txt_TitleSitePart2}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:08.494" endtime="20211117 14:13:08.517"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<assign>
+<var>${statut}</var>
+<var>${value}</var>
+</assign>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:08.521" level="INFO">Clicking element 'id=HEADER_SITE_DATA-LISTS_text'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211117 14:13:08.891" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211117 14:13:08.551" endtime="20211117 14:13:08.891"></status>
+</kw>
+<msg timestamp="20211117 14:13:08.892" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=95.0.4638.69)
+</msg>
+<status status="FAIL" starttime="20211117 14:13:08.518" endtime="20211117 14:13:08.892"></status>
+</kw>
+<msg timestamp="20211117 14:13:08.892" level="INFO">${statut} = FAIL</msg>
+<msg timestamp="20211117 14:13:08.892" level="INFO">${value} = ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=95.0.4638.69)
+</msg>
+<status status="PASS" starttime="20211117 14:13:08.517" endtime="20211117 14:13:08.892"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Click Element</arg>
+<arg>${link_PlusPageSite}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_PlusPageSite}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:08.893" level="INFO">Clicking element 'id=HEADER_SITE_MORE_PAGES_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:08.893" endtime="20211117 14:13:08.971"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:08.893" endtime="20211117 14:13:08.971"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:08.975" endtime="20211117 14:13:09.013"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:08.972" endtime="20211117 14:13:09.013"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Click Element</arg>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_ListeDonneesSite}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:09.014" level="INFO">Clicking element 'id=HEADER_SITE_DATA-LISTS_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:09.014" endtime="20211117 14:13:10.012"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:09.013" endtime="20211117 14:13:10.012"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:13:12.013" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:13:10.013" endtime="20211117 14:13:12.014"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${link_ListeDonnessCiblePart1}${vNomListeDonneesModifier}${link_ListeDonnessCiblePart2}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:12.015" endtime="20211117 14:13:12.053"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_ListeDonnessCiblePart1}${vNomListeDonneesModifier}${link_ListeDonnessCiblePart2}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:12.054" level="INFO">Clicking element '//div[@id='template_x002e_datalists_x002e_data-lists_x0023_default-lists']//a[text()='ListeDonneesXueModifier']'.</msg>
+<status status="PASS" starttime="20211117 14:13:12.054" endtime="20211117 14:13:12.667"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${txt_NomListeDonneesModifiePart1}${vNomListeDonneesModifier}${txt_NomListeDonneesModifiePart2}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:12.694" level="INFO">Current page contains element 'xpath=//h2[text()='ListeDonneesXueModifier']'.</msg>
+<status status="PASS" starttime="20211117 14:13:12.668" endtime="20211117 14:13:12.694"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${txt_DescriptionListeDonneesModifiePart1}${vDesciptionListeDonneesModifier}${txt_DescriptionListeDonneesModifiePart2}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:12.726" level="INFO">Current page contains element 'xpath=//div[text()='DesciptionListeDonneesModifier']'.</msg>
+<status status="PASS" starttime="20211117 14:13:12.694" endtime="20211117 14:13:12.726"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:13:14.727" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:13:12.727" endtime="20211117 14:13:14.728"></status>
+</kw>
+<kw name="Log Out Alfresco" library="resourceAlfresco1">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_HOME_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:14.730" level="INFO">Clicking element 'id=HEADER_HOME_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:14.729" endtime="20211117 14:13:15.531"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_POPUP_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:15.531" endtime="20211117 14:13:15.566"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_POPUP_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:15.566" level="INFO">Clicking element 'id=HEADER_USER_MENU_POPUP_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:15.566" endtime="20211117 14:13:15.644"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_LOGOUT_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:15.645" endtime="20211117 14:13:15.692"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_LOGOUT_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:15.693" level="INFO">Clicking element 'id=HEADER_USER_MENU_LOGOUT_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:15.693" endtime="20211117 14:13:15.748"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:14.728" endtime="20211117 14:13:15.748"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211117 14:13:15.749" endtime="20211117 14:13:16.059"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Post-conditions</arg>
+</arguments>
+<msg timestamp="20211117 14:13:16.061" level="INFO">Post-conditions</msg>
+<status status="PASS" starttime="20211117 14:13:16.060" endtime="20211117 14:13:16.061"></status>
+</kw>
+<kw name="Log in Alfresco" library="resourceAlfresco1">
+<arguments>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+</arguments>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:16.065" endtime="20211117 14:13:16.066"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${vURL}</arg>
+<arg>${vBrowser}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:16.068" level="INFO">Opening browser 'gc' to base url 'http://localhost:8088/share/page/'.</msg>
+<status status="PASS" starttime="20211117 14:13:16.067" endtime="20211117 14:13:20.195"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211117 14:13:20.196" endtime="20211117 14:13:20.420"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_UserName}</arg>
+<arg>${vUsername}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:20.421" level="INFO">Typing text '1689374' into text field 'xpath://input[@name='username']'.</msg>
+<status status="PASS" starttime="20211117 14:13:20.421" endtime="20211117 14:13:20.622"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_Password}</arg>
+<arg>${vPassword}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:20.623" level="INFO">Typing password into text field 'css:input[name='password']'.</msg>
+<msg timestamp="20211117 14:13:20.667" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211117 14:13:20.723" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20211117 14:13:20.623" endtime="20211117 14:13:20.723"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_Login}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:20.724" level="INFO">Clicking button 'css:.yui-button.yui-submit-button&gt;.first-child&gt;button'.</msg>
+<status status="PASS" starttime="20211117 14:13:20.723" endtime="20211117 14:13:22.375"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:16.062" endtime="20211117 14:13:22.375"></status>
+</kw>
+<kw name="Supprimer une liste de donnees" library="resourceAlfresco1">
+<arguments>
+<arg>${vNomSite}${date_current}</arg>
+<arg>${vNomListeDonneesModifier}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_HeaderSites}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:22.378" level="INFO">Clicking element 'id=HEADER_SITES_MENU_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:22.378" endtime="20211117 14:13:22.462"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_SITES_MENU_MY_SITES_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:22.463" endtime="20211117 14:13:22.717"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_SITES_MENU_MY_SITES_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:22.717" level="INFO">Clicking element 'id=HEADER_SITES_MENU_MY_SITES_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:22.717" endtime="20211117 14:13:22.759"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//a[text()='${vNomSite}']</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:22.760" endtime="20211117 14:13:23.313"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[text()='${vNomSite}']</arg>
+</arguments>
+<msg timestamp="20211117 14:13:23.314" level="INFO">Clicking element 'xpath=//a[text()='SiteXue20211117141150']'.</msg>
+<status status="PASS" starttime="20211117 14:13:23.314" endtime="20211117 14:13:24.386"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//span[@title='${vNomSite}']</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:24.386" endtime="20211117 14:13:24.403"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<assign>
+<var>${statut}</var>
+<var>${value}</var>
+</assign>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:24.403" level="INFO">Clicking element 'id=HEADER_SITE_DATA-LISTS_text'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211117 14:13:24.764" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211117 14:13:24.426" endtime="20211117 14:13:24.764"></status>
+</kw>
+<msg timestamp="20211117 14:13:24.766" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=95.0.4638.69)
+</msg>
+<status status="FAIL" starttime="20211117 14:13:24.403" endtime="20211117 14:13:24.766"></status>
+</kw>
+<msg timestamp="20211117 14:13:24.766" level="INFO">${statut} = FAIL</msg>
+<msg timestamp="20211117 14:13:24.766" level="INFO">${value} = ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=95.0.4638.69)
+</msg>
+<status status="PASS" starttime="20211117 14:13:24.403" endtime="20211117 14:13:24.766"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Click Element</arg>
+<arg>id=HEADER_SITE_MORE_PAGES_text</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_SITE_MORE_PAGES_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:24.767" level="INFO">Clicking element 'id=HEADER_SITE_MORE_PAGES_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:24.767" endtime="20211117 14:13:24.838"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:24.767" endtime="20211117 14:13:24.839"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:24.841" endtime="20211117 14:13:24.878"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:24.839" endtime="20211117 14:13:24.878"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${statut}'=='FAIL'</arg>
+<arg>Click Element</arg>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_SITE_DATA-LISTS_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:24.879" level="INFO">Clicking element 'id=HEADER_SITE_DATA-LISTS_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:24.879" endtime="20211117 14:13:25.853"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:24.879" endtime="20211117 14:13:25.853"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:13:27.855" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:13:25.853" endtime="20211117 14:13:27.855"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='template_x002e_datalists_x002e_data-lists_x0023_default-lists']//a[text()='${vNomListeDonnees}']</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:27.855" endtime="20211117 14:13:27.877"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<arguments>
+<arg>//div[@id='template_x002e_datalists_x002e_data-lists_x0023_default-lists']//a[text()='${vNomListeDonnees}']</arg>
+</arguments>
+<msg timestamp="20211117 14:13:27.877" level="INFO">Simulating Mouse Over on element '//div[@id='template_x002e_datalists_x002e_data-lists_x0023_default-lists']//a[text()='ListeDonneesXueModifier']'.</msg>
+<status status="PASS" starttime="20211117 14:13:27.877" endtime="20211117 14:13:28.157"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//a[contains(.,'${vNomListeDonnees}')]/span[@class='delete']</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:28.157" endtime="20211117 14:13:28.178"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[contains(.,'${vNomListeDonnees}')]/span[@class='delete']</arg>
+</arguments>
+<msg timestamp="20211117 14:13:28.179" level="INFO">Clicking element 'xpath=//a[contains(.,'ListeDonneesXueModifier')]/span[@class='delete']'.</msg>
+<status status="PASS" starttime="20211117 14:13:28.178" endtime="20211117 14:13:28.269"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:13:30.271" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:13:28.269" endtime="20211117 14:13:30.271"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@class='ft']/span/span[1]</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:30.271" endtime="20211117 14:13:30.292"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@class='ft']/span/span[1]</arg>
+</arguments>
+<msg timestamp="20211117 14:13:30.293" level="INFO">Clicking element '//div[@class='ft']/span/span[1]'.</msg>
+<status status="PASS" starttime="20211117 14:13:30.293" endtime="20211117 14:13:30.340"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:22.376" endtime="20211117 14:13:30.342"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:13:32.344" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:13:30.342" endtime="20211117 14:13:32.344"></status>
+</kw>
+<kw name="Supprimer un site" library="resourceAlfresco1">
+<arguments>
+<arg>${vNomSite}${date_current}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_HeaderSites}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:32.346" level="INFO">Clicking element 'id=HEADER_SITES_MENU_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:32.345" endtime="20211117 14:13:32.420"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_SITES_MENU_MY_SITES_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:32.420" endtime="20211117 14:13:32.653"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_SITES_MENU_MY_SITES_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:32.653" level="INFO">Clicking element 'id=HEADER_SITES_MENU_MY_SITES_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:32.653" endtime="20211117 14:13:33.102"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//a[text()='${vNomSite}']</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:33.103" endtime="20211117 14:13:33.135"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[text()='${vNomSite}']</arg>
+</arguments>
+<msg timestamp="20211117 14:13:33.136" level="INFO">Clicking element 'xpath=//a[text()='SiteXue20211117141150']'.</msg>
+<status status="PASS" starttime="20211117 14:13:33.135" endtime="20211117 14:13:33.923"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_SITE_CONFIGURATION_DROPDOWN</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:33.924" endtime="20211117 14:13:33.976"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_SITE_CONFIGURATION_DROPDOWN</arg>
+</arguments>
+<msg timestamp="20211117 14:13:33.976" level="INFO">Clicking element 'id=HEADER_SITE_CONFIGURATION_DROPDOWN'.</msg>
+<status status="PASS" starttime="20211117 14:13:33.976" endtime="20211117 14:13:34.048"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_DELETE_SITE_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:34.048" endtime="20211117 14:13:34.116"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_DELETE_SITE_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:34.116" level="INFO">Clicking element 'id=HEADER_DELETE_SITE_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:34.116" endtime="20211117 14:13:34.162"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=ALF_SITE_SERVICE_DIALOG_CONFIRMATION_label</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:34.163" endtime="20211117 14:13:34.237"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=ALF_SITE_SERVICE_DIALOG_CONFIRMATION_label</arg>
+</arguments>
+<msg timestamp="20211117 14:13:34.237" level="INFO">Clicking element 'id=ALF_SITE_SERVICE_DIALOG_CONFIRMATION_label'.</msg>
+<status status="PASS" starttime="20211117 14:13:34.237" endtime="20211117 14:13:34.293"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:32.344" endtime="20211117 14:13:34.293"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20211117 14:13:36.295" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211117 14:13:34.293" endtime="20211117 14:13:36.296"></status>
+</kw>
+<kw name="Vider corbeille" library="resourceAlfresco1">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${link_HeaderSites}</arg>
+</arguments>
+<msg timestamp="20211117 14:13:36.297" level="INFO">Clicking element 'id=HEADER_SITES_MENU_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:36.297" endtime="20211117 14:13:36.347"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_SITES_MENU_MY_SITES_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:36.347" endtime="20211117 14:13:36.590"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_SITES_MENU_MY_SITES_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:36.590" level="INFO">Clicking element 'id=HEADER_SITES_MENU_MY_SITES_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:36.590" endtime="20211117 14:13:37.034"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=template_x002e_toolbar_x002e_user-sites_x0023_default-user-trashcan-link</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:37.034" endtime="20211117 14:13:37.074"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=template_x002e_toolbar_x002e_user-sites_x0023_default-user-trashcan-link</arg>
+</arguments>
+<msg timestamp="20211117 14:13:37.075" level="INFO">Clicking element 'id=template_x002e_toolbar_x002e_user-sites_x0023_default-user-trashcan-link'.</msg>
+<status status="PASS" starttime="20211117 14:13:37.074" endtime="20211117 14:13:37.579"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=template_x002e_user-trashcan_x002e_user-trashcan_x0023_default-empty-button-button</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:37.580" endtime="20211117 14:13:37.640"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=template_x002e_user-trashcan_x002e_user-trashcan_x0023_default-empty-button-button</arg>
+</arguments>
+<msg timestamp="20211117 14:13:37.640" level="INFO">Clicking element 'id=template_x002e_user-trashcan_x002e_user-trashcan_x0023_default-empty-button-button'.</msg>
+<status status="PASS" starttime="20211117 14:13:37.640" endtime="20211117 14:13:37.739"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@class='ft']/span/span[1]</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:37.740" endtime="20211117 14:13:37.786"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@class='ft']/span/span[1]</arg>
+</arguments>
+<msg timestamp="20211117 14:13:37.786" level="INFO">Clicking element '//div[@class='ft']/span/span[1]'.</msg>
+<status status="PASS" starttime="20211117 14:13:37.786" endtime="20211117 14:13:37.836"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20211117 14:13:42.838" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211117 14:13:37.836" endtime="20211117 14:13:42.839"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:36.296" endtime="20211117 14:13:42.839"></status>
+</kw>
+<kw name="Log Out Alfresco" library="resourceAlfresco1">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_HOME_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:42.840" level="INFO">Clicking element 'id=HEADER_HOME_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:42.840" endtime="20211117 14:13:43.532"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_POPUP_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:43.532" endtime="20211117 14:13:43.602"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_POPUP_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:43.603" level="INFO">Clicking element 'id=HEADER_USER_MENU_POPUP_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:43.603" endtime="20211117 14:13:43.673"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_LOGOUT_text</arg>
+</arguments>
+<status status="PASS" starttime="20211117 14:13:43.673" endtime="20211117 14:13:43.734"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=HEADER_USER_MENU_LOGOUT_text</arg>
+</arguments>
+<msg timestamp="20211117 14:13:43.735" level="INFO">Clicking element 'id=HEADER_USER_MENU_LOGOUT_text'.</msg>
+<status status="PASS" starttime="20211117 14:13:43.734" endtime="20211117 14:13:43.798"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:13:42.839" endtime="20211117 14:13:43.798"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211117 14:13:43.798" endtime="20211117 14:13:44.173"></status>
+</kw>
+<status status="PASS" starttime="20211117 14:11:50.211" endtime="20211117 14:13:44.174" critical="yes"></status>
+</test>
+<doc>ModifierUneListeDeDonnees</doc>
+<status status="PASS" starttime="20211117 14:11:49.938" endtime="20211117 14:13:44.180"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="RQ3.BF11.2:ModifierUneListeDeDonnees">RQ3.BF11.2:ModifierUneListeDeDonnees</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

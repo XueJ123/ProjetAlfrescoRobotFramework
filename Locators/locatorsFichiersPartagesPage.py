@@ -1,0 +1,12 @@
+link_DossierCiblePart1="xpath=//*[text()='"
+link_DossierCiblePart2="']"
+btn_ActionDossierPart1="//*[text()='"
+btn_ActionDossierPart2="']//ancestor::tr/td[@class='actionsCell']/div"
+link_CopierVers="id=FCTSRCH_SEARCH_RESULT_ACTIONS_document-copy-to_text"
+link_ToutLesSites="//div[@class='alfresco-pickers-Picker']/div[1]/div[2]/div[1]/div/div[3]"
+link_SiteCibleCopierVersPart1="//div[@class='alfresco-pickers-Picker']//descendant::span[text()='"
+link_SiteCibleCopierVersPart2="']"
+link_DocumentLibrary="//div[@class='dijitTreeRow']//descendant::span[text()='Document Library']"
+btn_CopierDossierVers="//div[@class='footer']/span[2]"
+link_DocumentLibrarySite="id=HEADER_SITE_DOCUMENTLIBRARY_text"
+
